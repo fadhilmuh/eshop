@@ -30,6 +30,13 @@
                     <div class="d-inline-block mr-2">
                         <a th:href="@{/product/edit/{productId}(productId=${product.productId})}" class="btn btn-secondary btn-sm">Edit</a>
                     </div>
+                    <!-- Delete button -->
+                    <div class="d-inline-block">
+                        <form th:action="@{/product/delete/{productId}(productId=${product.productId})}" th:method="delete">
+                            <input th:type="hidden" th:name="_method" th:value="DELETE"/>
+                            <button th:type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </div>
                 </div>
             </td>
         </tr>
