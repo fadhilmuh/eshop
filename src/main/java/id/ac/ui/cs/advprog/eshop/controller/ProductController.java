@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/product")
@@ -25,8 +26,22 @@ public class ProductController {
 
     @PostMapping("/create")
     public String createProductPost (@ModelAttribute Product product, Model model) {
+        product.setProductId(UUID.randomUUID().toString());
         service.create(product);
         return "redirect:list";
+    }
+
+    @GetMapping("/edit/{productId}")
+    public String editProductPage (@PathVariable("productId") String productId, Model model) {
+        Product product = service.findById(productId);
+        model.addAttribute("product", product);
+        return "editProduct";
+    }
+
+    @PostMapping("/edit/{productId}")
+    public String editProduct (@ModelAttribute Product product){
+        service.edit(product);
+        return "redirect:../list";
     }
 
     @GetMapping("/list")
