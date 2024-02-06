@@ -32,6 +32,12 @@ public class ProductRepository {
         return null;
     }
 
+    public void delete (String productId) {
+        Product product = productMap.get(productId);
+        productData.remove(product);
+        productMap.remove(productId);
+    }
+
     public Product findById (String productId) {
         return productMap.get(productId);
     }
