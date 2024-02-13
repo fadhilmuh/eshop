@@ -1,18 +1,30 @@
 package id.ac.ui.cs.advprog.eshop.repository;
 
 import id.ac.ui.cs.advprog.eshop.model.Product;
+import id.ac.ui.cs.advprog.eshop.service.ProductServiceImpl;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Iterator;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class ProductRepositoryTest {
+
+    @Mock
+    ProductServiceImpl productService;
+
+    @Mock
+    ProductRepository productRepositoryMock;
 
     @InjectMocks
     ProductRepository productRepository;
@@ -120,6 +132,20 @@ public class ProductRepositoryTest {
 
         Product savedProduct = productRepository.findById("eb558e9f-1c39-460e-8860-71af6af63bd6");
         assertNull(savedProduct);
+    }
+
+    @Test
+    void testEditProductIfNotFound() {
+        Product product = new Product();
+        when(productRepositoryMock.edit(product)).thenReturn(null);
+
+        Product editedProduct = productRepositoryMock.edit(product);
+
+        assertEquals(editedProduct, null);
+        verify(productRepositoryMock, times(1)).edit(product);
+
+        editedProduct = productRepository.edit(product);
+        assertEquals(editedProduct, null);
     }
     
 }
