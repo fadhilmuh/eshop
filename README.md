@@ -4,10 +4,49 @@ Fadhil Muhammad
 2206083464
 ```
 
+# MODUL 2
+<details>
+<summary style="font-size:20px">Refleksi </summary>
+
+## List Code Quality Issue yang Di-fix
+1. #### Menghapus modifier public pada interface ProductService.java.
+    
+    Modifier method-method pada interface ProductService.java dihapus karena merupakan hal yang tidak penting. Dengan menghapusnya meningkatkan kualitas code style
+2. #### Menghapus import .* pada ProductController.java dan mengubahnya untuk mengimport hal-hal yang diperlukan saja
+
+    Hal ini dilakukan karena tidak semua yang diimport digunakan. Sehingga, mengubah import .* menjadi import-import modul yang dipakai saja meningkatkan kualitas code style.
+
+    Sebelum:
+    ```java
+    ...
+    import org.springframework.web.bind.annotation.*
+    ...
+    ```
+
+    Sesudah:
+    ```java
+    import org.springframework.web.bind.annotation.RequestMapping;
+    import org.springframework.web.bind.annotation.GetMapping;
+    import org.springframework.web.bind.annotation.PostMapping;
+    import org.springframework.web.bind.annotation.ModelAttribute;
+    import org.springframework.web.bind.annotation.PathVariable;
+    import org.springframework.web.bind.annotation.DeleteMapping;
+    ```
+
+### Apakah implementasi sekarang sudah memenuhi definisi CI/CD (Continuous Integration and Continuous Development)?
+
+
+Penerapan Continuous Integration/Continuous Deployment (CI/CD) merupakan praktik penting dalam pengembangan perangkat lunak modern. Dengan CI/CD, proses pengembangan dapat diotomatisasi secara efisien, memungkinkan kita untuk melakukan uji coba dan deployment secara cepat dan konsisten setiap kali ada perubahan kode.
+
+Menurut saya, penerapan saat ini telah mencapai prinsip dasar CI/CD dengan baik. Dengan menggunakan GitHub Workflows, proyek dapat melakukan uji coba dan deployment secara otomatis setiap kali ada perubahan di repositori GitHub. Uji coba dilakukan menggunakan file ci.yml untuk setiap perubahan di semua branch, kemudian kode diperiksa menggunakan PMD untuk memastikan keamanan dan kualitasnya. Setelah lulus uji coba dan dinyatakan aman, kode akan digabungkan ke branch utama dan secara otomatis didistribusikan ke PaaS Koyeb melalui file scorecard.yml. Semua proses ini membentuk alur kerja CI/CD yang otomatis dalam siklus pengembangan perangkat lunak.
+</details>
+
+# 
+# MODUL 1
 <details>
 <summary style="font-size:20px">Refleksi 1</summary>
 
-#
+# 
 ## REFLEKSI-1: Clean Code
 Clean code adalah konsep dalam pengembangan perangkat lunak yang menekankan pentingnya menulis kode yang mudah dibaca, dimengerti, dan dipelihara oleh orang lain. Prinsip-prinsip clean code membantu mengurangi kompleksitas, meningkatkan keterbacaan, dan memudahkan pemeliharaan kode.
 
