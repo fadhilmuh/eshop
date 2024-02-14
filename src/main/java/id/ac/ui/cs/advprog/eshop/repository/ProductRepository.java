@@ -22,12 +22,11 @@ public class ProductRepository {
     }
 
     public Product edit (Product product) {
-        for (Product p : productData) {
-            if (p.getProductId().equals(product.getProductId())) {
-                p.setProductName(product.getProductName());
-                p.setProductQuantity(product.getProductQuantity());
-                return p;
-            }
+        Product productToEdit = productMap.get(product.getProductId());
+        if (productToEdit != null) {
+            productToEdit.setProductName(product.getProductName());
+            productToEdit.setProductQuantity(product.getProductQuantity());
+            return productToEdit;
         }
         return null;
     }

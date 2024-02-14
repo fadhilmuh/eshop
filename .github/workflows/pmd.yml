@@ -1,0 +1,34 @@
+name: PMD
+
+## Run PMD jobs on all branches by default
+on:
+  push:
+  pull_request:
+
+jobs:
+  pmd:
+    name: Run tests
+    runs-on: ubuntu-22.04
+    permissions:
+      # required for all workflows
+      security-events: write
+    steps:
+      - name: Check out the Git repository
+        uses: actions/checkout@v4
+      - name: Set up Java toolchain
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: 'gradle'
+      - uses: pmd/pmd-github-action@v1
+        id: pmd
+        with:
+          version: '7.0.0-rc4'
+          sourcePath: 'src/main/java'
+          rulesets: 'rulesets/java/quickstart.xml,ruleset.xml'
+          analyzeModifiedFilesOnly: false
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: pmd-report.sarif
