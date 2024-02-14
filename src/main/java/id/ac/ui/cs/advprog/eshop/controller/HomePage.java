@@ -9,7 +9,7 @@ public class HomePage {
     
     @GetMapping("/")
     public String createProductPage(Model model){
-        return "HomePage";
+        return "homepage";
     }
 
 }
