@@ -4,6 +4,34 @@ Fadhil Muhammad
 2206083464
 ```
 
+# MODUL 3
+<details>
+<summary style="font-size:20px">Refleksi </summary>
+
+# Prinsip yang Diterapkan 
+### Single Responsibility Principle
+Prinsip ini mengacu pada konsep bahwa setiap kelas harus bertanggung jawab atas satu hal saja. Saya memutuskan untuk memisahkan CarController dari ProductController karena keduanya memiliki tanggung jawab yang berbeda.
+
+### Liskov Substitution Principle
+Prinsip ini menggarisbawahi bahwa subclass harus dapat menggantikan superclass tanpa mengubah perilaku dari superclass tersebut. Awalnya, class CarController merupakan subclass dari class ProductControlle yang tidak diperlukan karena CarController memiliki tanggung jawab dan hubungan yang berbeda dengan ProductController. Oleh karena itu, perlu untuk menghilangkan inheritance tersebut.
+
+### Dependency Inversion Principle
+"Dependency Inversion Principle" (DIP) adalah prinsip yang mempromosikan penggunaan abstraksi untuk mengurangi ketergantungan langsung antara kelas-kelas tingkat tinggi dan rendah, sehingga memudahkan perubahan dan fleksibilitas dalam sistem.
+
+Untuk menerapkan konsep ini, saya membuat sebuah interface bernama CarService yang kemudian diimplementasikan oleh CarServiceImpl. Dengan cara ini, CarController tidak lagi bergantung secara langsung pada CarServiceImpl, tetapi bergantung pada abstraksi CarService.
+
+# Keuntungan Menerapkan Prinsip SOLID
+Menerapkan SOLID Principle dalam software development membawa sejumlah keuntungan signifikan. Dengan mematuhi prinsip-prinsip ini, kode menjadi lebih mudah dipahami dan dikelola, karena setiap prinsip memberikan panduan yang jelas tentang desain yang bersih dan terstruktur. Fleksibilitas dan perluasan sistem juga meningkat, karena SOLID memungkinkan untuk membuat modifikasi tanpa harus menyentuh banyak bagian dari kode yang ada. Pengurangan ketergantungan antar kelas dan modul membantu mengurangi dampak perubahan pada satu bagian terhadap bagian lain dari sistem. Kemudahan dalam pengujian juga ditingkatkan, karena prinsip-prinsip ini memastikan bahwa setiap kelas memiliki satu tanggung jawab yang jelas, memudahkan dalam menguji fungsionalitasnya. Terakhir, SOLID membantu mencegah terjadinya kode yang "kotor" atau "berantakan", karena mempromosikan desain yang bersih dan terorganisir.
+
+# Kerugian tidak Menerapkan Prinsip SOLID
+Tidak menerapkan SOLID Principle dalam *software development* dapat mengakibatkan sejumlah kerugian yang signifikan. Tanpa SOLID, kode cenderung menjadi sulit dipahami dan sulit dikelola karena kurangnya struktur dan prinsip desain yang jelas. Ketergantungan yang tinggi antara kelas dan modul dapat menyebabkan perubahan pada satu bagian dari kode mempengaruhi banyak bagian lain, menghasilkan kode yang rapuh dan sulit untuk dimodifikasi. 
+
+Selain itu, kurangnya prinsip-prinsip SOLID dapat mengakibatkan kesulitan dalam pengujian, karena tidak adanya jaminan bahwa setiap kelas memiliki satu tanggung jawab yang terdefinisi dengan jelas. Hal ini dapat mengarah pada kurangnya fleksibilitas dalam sistem dan meningkatkan waktu yang diperlukan untuk pengembangan dan pemeliharaan kode. Terakhir, tanpa SOLID, ada risiko tinggi untuk menghasilkan kode yang tidak terstruktur dan sulit dipelihara, meningkatkan biaya jangka panjang untuk pengembangan dan evolusi sistem.
+
+**Contohnya** jika tidak menerapkan salah satu prinsip dalam SOLID yaitu SRP (dalam hal proyek ini tidak memisahkan CarController dari ProductController). Hal redundant yang mengotori kode seperti hal tersebut bisa saja menyulitkan atau membingungkan developer ke depannya dalam proses pemeliharan atau pengembangan.
+</details>
+
+#
 # MODUL 2
 <details>
 <summary style="font-size:20px">Refleksi </summary>
