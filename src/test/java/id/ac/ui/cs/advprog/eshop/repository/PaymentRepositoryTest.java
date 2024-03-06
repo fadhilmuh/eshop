@@ -11,18 +11,19 @@ import id.ac.ui.cs.advprog.eshop.enums.*;
 import id.ac.ui.cs.advprog.eshop.model.Product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import id.ac.ui.cs.advprog.eshop.model.Order;
 import id.ac.ui.cs.advprog.eshop.model.Payment;
 
+@SpringBootTest
 public class PaymentRepositoryTest {
-    PaymentRepository paymentRepository;
+    @Autowired PaymentRepository paymentRepository;
     List<Payment> payments;
 
     @BeforeEach
     void setUp() {
-        paymentRepository = new PaymentRepository();
-
         List<Product> products = new ArrayList<>();
         Product product1 = new Product();
         product1.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
