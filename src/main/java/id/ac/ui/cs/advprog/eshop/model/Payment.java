@@ -13,10 +13,12 @@ public class Payment {
     String method;
     String status;
     Map<String, String> paymentData;
+    Order order;
 
-    public Payment(String id, String method, Map<String, String> paymentData) {
+    public Payment(String id, String method, Map<String, String> paymentData, Order order) {
         this.id = id;
         this.paymentData = paymentData;
+        this.order = order;
 
         if (method.equals("VOUCHER_CODE")) {
             verifyVoucherCode(paymentData);
