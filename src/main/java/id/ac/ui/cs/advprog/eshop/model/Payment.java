@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import id.ac.ui.cs.advprog.eshop.enums.PaymentStatus;
+
 @Getter
 @Setter
 public class Payment {
@@ -33,18 +35,18 @@ public class Payment {
         String voucherCode = paymentData.get("voucherCode");
         if (isPaymentDataByVoucherCodeFormatValid(paymentData) && isVoucherCodeValid(voucherCode)){
             this.setMethod("VOUCHER_CODE");
-            this.setStatus("SUCCESS");
+            this.setStatus(PaymentStatus.SUCCESS.getValue());
         } else {
-            this.setStatus("REJECTED");
+            this.setStatus(PaymentStatus.REJECTED.getValue());
         }
     }
 
     public void verifyBankTransfer(Map<String, String> paymentData){
         if (paymentDataByBankTransferValid(paymentData) && bankNameNotNull(paymentData) && referenceCodeNotNull(paymentData)) {
             this.setMethod("BANK_TRANSFER");
-            this.setStatus("SUCCESS");
+            this.setStatus(PaymentStatus.SUCCESS.getValue());
         } else {
-            this.setStatus("REJECTED");
+            this.setStatus(PaymentStatus.REJECTED.getValue());
         }
     }
 
@@ -54,7 +56,7 @@ public class Payment {
     }
 
     public void setStatus(String status) {
-        if (status.equals("SUCCESS") || status.equals("REJECTED")) {
+        if (status.equals(PaymentStatus.SUCCESS.getValue()) || status.equals(PaymentStatus.REJECTED.getValue())) {
             this.status = status;
         } else {
             throw new IllegalArgumentException();
