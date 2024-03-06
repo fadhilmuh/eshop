@@ -4,6 +4,38 @@ Fadhil Muhammad
 2206083464
 ```
 
+# MODUL 4
+<details>
+<summary style="font-size:20px">Refleksi </summary>
+
+### Reflect based on Percival (2017) proposed self-reflective questions (in “Principles and Best Practice of Testing” submodule, chapter “Evaluating Your Testing Objectives”), whether this TDD flow is useful enough for you or not. If not, explain things that you need to do next time you make more tests.
+
+Dalam konteks TDD, tujuan utamanya adalah memastikan bahwa kode berperilaku sesuai yang diharapkan dan memenuhi persyaratan. Jika alur TDD menghasilkan pengujian yang menyeluruh yang mencakup semua skenario dan kasus ujung yang relevan, maka saya akan menganggap tujuan pengujian tercapai.
+
+Menurut saya, alur TDD yang saya terapkan saat mengerjakan modul 4 ini terbukti bermanfaat. Saya mengevaluasi proses TDD yang saya lakukan sesuai dengan saran dari Percival, sebagai berikut.
+
+Pertama, saya memastikan bahwa alur TDD sudah memenuhi kebutuhan dan fungsionalitas dari kode yang sedang diuji. Apakah semua aspek dari kode sudah tercakup dalam pengujian? Apakah ada bagian yang belum teruji? Saya berpendapat bahwa pengujian yang telah saya tulis sudah memenuhi kriteria-kriteria tersebut.
+
+Kedua, saya menilai efisiensi tahapan pengujian menggunakan metode TDD. Apakah proses ini meningkatkan kecepatan pengembangan dan kualitas kode? Apakah ada kendala yang menghambat proses pengembangan? Menurut saya, meskipun pembuatan pengujian memerlukan waktu, tetapi hasilnya sepadan dengan manfaat yang didapat, yaitu mendeteksi bug lebih awal untuk memperbaikinya dengan cepat.
+
+Ketiga, saya meninjau kelengkapan pengujian yang telah dibuat. Apakah pengujian mudah dimengerti dan dapat diperbaiki jika diperlukan? Saat ini, pengujian yang saya buat masih cukup sederhana, sehingga mudah dimengerti dan tidak memerlukan perbaikan.
+
+### You have created unit tests in Tutorial. Now reflect whether your tests have successfully followed F.I.R.S.T. principle or not. If not, explain things that you need to do the next time you create more tests.
+
+Penilaian apakah tes yang saya buat telah mengikuti prinsip F.I.R.S.T. atau tidak:
+
+1. Fast (Cepat): Tes harus berjalan cepat untuk memberikan umpan balik secara instan. Jika tes memerlukan waktu lama untuk dijalankan, hal ini dapat menghambat produktivitas tim. Jika tes saya di Tutorial berjalan dengan cepat, maka tes tersebut memenuhi kriteria ini. Pada tutorial ini, tes masih berjalan dengan cepat dan tidak menghambat proses pengembangan.
+
+2. Independent (Independen): Tes harus independen satu sama lain, sehingga hasil tes tidak dipengaruhi oleh tes lainnya. Hal ini memastikan keandalan dan keterpisahan tes. Jika tes yang saya buat di Tutorial tidak bergantung satu sama lain dan dapat dijalankan secara independen, maka tes tersebut memenuhi kriteria ini. Pada tutorial ini, tes masih independen satu sama lain, memastikan isolasi yang baik dalam kode.
+
+3. Repeatable (Dapat Diulang): Tes harus memberikan hasil yang konsisten setiap kali dijalankan. Tes yang tidak konsisten dapat menimbulkan kebingungan dan mempersulit debugging. Jika tes yang saya buat di Tutorial memberikan hasil yang konsisten setiap kali dijalankan, maka tes tersebut memenuhi kriteria ini. Pada tutorial ini, tes dapat dijalankan secara konsisten di berbagai lingkungan, tidak tergantung pada faktor eksternal.
+
+4. Self-Validating (Menguji Sendiri): Tes harus memberikan hasil yang jelas dan otomatis diklasifikasikan sebagai berhasil atau gagal. Hal ini memungkinkan untuk mengetahui apakah kode berfungsi dengan benar atau tidak tanpa perlu inspeksi manual. Jika tes yang saya buat di Tutorial secara otomatis memberikan hasil yang jelas tentang keberhasilan atau kegagalan, maka tes tersebut memenuhi kriteria ini. Pada tutorial ini, semua test yang mungkin sudah tertulis dalam test.
+
+5. Timely (Tepat Waktu): Tes harus dibuat sebelum kode yang diuji dibuat, dan harus diperbarui secara teratur untuk memastikan relevansinya dengan kode yang berkembang. Jika saya telah membuat tes sebelum mengimplementasikan kode dan memperbarui tes secara berkala, maka tes tersebut memenuhi kriteria ini. Pada tutorial kali ini, Semua tes ditulis tepat waktu, sebelum implementasi kode program.
+
+</details>
+
 # MODUL 3
 <details>
 <summary style="font-size:20px">Refleksi </summary>
